@@ -1,8 +1,11 @@
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <h1 class="lead">New review for " <%=@list.id %>-<%= @list.name %></h1>
 
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <h1 class="lead">New Bookmark for <%=@list.id %>-<%= @list.name %></h1>
   <hr>
   <%= f.association :movie, label_method: :title, value_method: :id%>
   <%= f.input :comment %>
+  <hr>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
+<br>
+<%= link_to "All the list", lists_path %>

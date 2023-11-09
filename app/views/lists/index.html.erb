@@ -1,9 +1,17 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Lists</li>
+  </ol>
+</nav>
+<hr>
+
+<h1>Your Movie List</h1>
 <table class="table">
   <thead>
   <tr>
       <th scope="col">id</th>
       <th scope="col">Name</th>
-      <th scope="col">Delete</th>
+      <th scope="col"></th>
   </tr>
   <% @lists.each do |list| %>
   <tr>
@@ -13,10 +21,8 @@
     <td>
       <%= link_to list.name, list_path(list) %> </td>
     <td>
-      <%= link_to "Delete", list_path(list),
-      data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete the list" } %>
+      <%= link_to "Delete",list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </td>
-
   </tr>
   <% end %>
   </tbody>
@@ -24,4 +30,6 @@
 
 <br>
   <%= link_to "All", lists_path %> |
+  <%= link_to "New list", new_list_path %>
+
 </div>
