@@ -1,0 +1,8 @@
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <h1 class="lead">New review for " <%=@list.id %>-<%= @list.name %></h1>
+
+  <hr>
+  <%= f.association :movie, label_method: :title, value_method: :id%>
+  <%= f.input :comment %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

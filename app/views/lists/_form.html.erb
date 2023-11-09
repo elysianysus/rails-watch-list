@@ -1,0 +1,19 @@
+<div class="container">
+<%= form_with model: list do |f| %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">items</th>
+      <th scope="col">details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %> </td>
+    </tr>
+  </tbody>
+  </table>
+<%= f.submit %> | <%= link_to "All the list", lists_path %>
+   <% end %>
+  </div>

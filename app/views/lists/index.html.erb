@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+  <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Delete</th>
+  </tr>
+  <% @lists.each do |list| %>
+  <tr>
+   <td>
+      <%= list.id %>
+   </td>
+    <td>
+      <%= link_to list.name, list_path(list) %> </td>
+    <td>
+      <%= link_to "Delete", list_path(list),
+      data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete the list" } %>
+    </td>
+
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+  <%= link_to "All", lists_path %> |
+</div>

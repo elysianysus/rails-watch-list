@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+      <th scope="row"><%=@list.id %></th>
+      <td><%= @list.name %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+  <%= link_to "Edit", edit_list_path(@list) %> | <%= link_to 'New Bookmark', "/lists/#{@list.id}/bookmarks/new/" %>
+</div>
+
+<table class="table">
+ <thead>
+   <tr>
+      <th scope="col">Movie</th>
+      <th scope="col">Comment</th>
+</thead>
+<% @list.bookmarks.each do |bookmark| %>
+  <tbody>
+
+    <td><%= bookmark.movie.title %> </td>
+      <td><%= bookmark.comment %> </td>
+    <%end%>
+  </tbody>
+</table>
